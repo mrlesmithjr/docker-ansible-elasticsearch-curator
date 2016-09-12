@@ -1,0 +1,13 @@
+version: '2'
+services:
+  dummy:
+    build: "./"
+    image: "dummy"
+    ports:
+      - "80:80"
+    restart: "always"
+    volumes:
+      - "dummy:/dummy"
+
+volumes:
+  dummy:
