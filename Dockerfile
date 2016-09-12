@@ -6,7 +6,7 @@ MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
 ENV CURATOR_MAJOR_VER="4" \
     CURATOR_VER="4.1.0" \
     ELASTICSEARCH_HOST="elasticsearch" \
-    OLDER_THAN_IN_DAYS="30"
+    DELETE_OLDER_THAN_IN_DAYS="30"
 
 # Copy Ansible Related Files
 COPY config/ansible/ /
