@@ -6,7 +6,8 @@ Consuming
 ---------
 ```
 docker run -d -e "ELASTICSEARCH_HOST=elasticsearch" \
-  -e "OLDER_THAN_IN_DAYS=45" mrlesmithjr/elasticsearch-curator
+  -e "OLDER_THAN_IN_DAYS=45" --link es1:elasticsearch \
+  mrlesmithjr/elasticsearch-curator
 ```
 
 License
