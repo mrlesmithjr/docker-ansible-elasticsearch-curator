@@ -5,11 +5,19 @@
   vars:
   roles:
   tasks:
+    - name: Configuring Curator
+      template:
+        src: "/{{ item }}.j2"
+        dest: "/opt/{{ item }}"
+      with_items:
+        - 'curator_actions.yml'
+        - 'curator_config.yml'
+
     - name: install curator crontab
       cron:
-        name: "es_curator_delete"
+        name: "es_curator"
         special_time: "daily"
         user: "www-data"
-        job: '/usr/local/bin/curator --host {{ elasticsearch_host }} delete indices --time-unit days --timestring "\%Y.\%m.\%d" --older-than {{ delete_older_than_in_days | default(360) }}'
-        cron_file: "es_curator_delete"
+        job: '/usr/local/bin/curator --config /opt/curator_config.yml /opt/curator_actions.yml'
+        cron_file: "es_curator"
         state: "present"
