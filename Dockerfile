@@ -4,7 +4,7 @@ MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
 
 # Define Curator version to install
 ENV CURATOR_MAJOR_VER="4" \
-    CURATOR_VER="4.1.0" \
+    CURATOR_VER="4.0.6" \
     ELASTICSEARCH_HOST="elasticsearch" \
     DELETE_OLDER_THAN_IN_DAYS="30"
 
